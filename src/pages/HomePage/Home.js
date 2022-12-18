@@ -1,5 +1,5 @@
 import React from 'react';
-import { InfoSection, Pricing, InfoSectionWithInput } from '../../components';
+import { InfoSection, Pricing, InfoSectionWithInput, FeedbackView } from '../../components';
 import { homeObjOne, homeObjThree, homeObjTwo, homeObjFour} from './Data';
 import axios from 'axios';
 
@@ -7,6 +7,9 @@ const ONE_DAY_EPOCH_MILLIS = 1000 * 3600 * 24;
 const LOOKBACK_DAYS_EPOCH_MILLIS = ONE_DAY_EPOCH_MILLIS * 90;
 
 const Home = () => {
+    const [feedback, setFeedback] = React.useState([]);
+    const [showFeedback, setShowFeedback] = React.useState(false)
+
     function queryData(plateNumber) {
         // get current date time 
         // get date time from past 3 months
@@ -18,24 +21,29 @@ const Home = () => {
         const urlPath = 'https://tysaeja8gf.execute-api.ca-central-1.amazonaws.com/queryData'
         const urlQueryString = new URLSearchParams();
         urlQueryString.set('plateNumber', plateNumber)
-        urlQueryString.set('startEpochMillis', currentEpochMillis)
-        urlQueryString.set('endEpochMillis', lookBackStartEpochMillis)
+        urlQueryString.set('startEpochMillis', lookBackStartEpochMillis)
+        urlQueryString.set('endEpochMillis', currentEpochMillis)
         const url = urlPath + '?' + urlQueryString.toString()
 
         let config = {
             headers: {
               'X-Api-Key': '2p5xPZRjWg5NZejPbLkpH5ZwYx4veWtQaYbGXIAa',
+              'Content-Type': '',
+              'X-Amz-Date': '',
+              'Authorization': '',
+              'X-Amz-Security-Token': ''
             }
           }
 
         axios.get(url, config)
             .then(function (response) {
-            // handle success
-            console.log(response);
+                // handle success
+                setFeedback(response?.data?.data)
+                setShowFeedback(true);
             })
             .catch(function (error) {
-            // handle error
-            console.log(error);
+                // handle error
+                console.log(error);
             })
             .finally(function () {
             // always executed
@@ -50,6 +58,14 @@ const Home = () => {
                 }}
                 {...homeObjOne} 
             />
+            {
+                showFeedback && (
+                    <FeedbackView
+                        feedbackList={feedback}
+                    />
+                )
+            }
+            
             <InfoSection {...homeObjThree} />
             <InfoSection {...homeObjTwo} />
             <Pricing />
