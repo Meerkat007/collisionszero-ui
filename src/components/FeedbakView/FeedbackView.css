@@ -1,0 +1,45 @@
+.cz_tableview {
+    padding: 40px 0 0 0;
+}
+
+.cz_tableview.no_feedback {
+    color: var(--white-color);
+}
+
+.cz_tableview table {
+    border: 1px solid white;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 0 20px rgb(0 0 0 / 15%);
+    text-align: left;
+}
+
+.cz_tableview thead {
+    border-bottom: 1px solid #dddddd;
+}
+
+.cz_tableview thead tr {
+    background-color: var(--white-color);
+    color: #000000;
+    text-align: left;
+}
+
+.cz_tableview th,
+.cz_tableview td {
+    padding: 12px 15px;
+}
+
+.cz_tableview tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: var(--white-color);
+    color: black;
+}
+
+.cz_tableview tbody tr:nth-of-type(even) {
+    background-color: var(--white-color);
+    color: black;
+}

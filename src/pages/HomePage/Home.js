@@ -9,6 +9,7 @@ const LOOKBACK_DAYS_EPOCH_MILLIS = ONE_DAY_EPOCH_MILLIS * 90;
 const Home = () => {
     const [feedback, setFeedback] = React.useState([]);
     const [showFeedback, setShowFeedback] = React.useState(false)
+    const [isGettingFeedback, setIsGettingFeedback] = React.useState(false)
 
     function queryData(plateNumber) {
         // get current date time 
@@ -35,6 +36,7 @@ const Home = () => {
             }
           }
 
+        setIsGettingFeedback(true)
         axios.get(url, config)
             .then(function (response) {
                 // handle success
@@ -46,7 +48,7 @@ const Home = () => {
                 console.log(error);
             })
             .finally(function () {
-            // always executed
+                setIsGettingFeedback(false);
             });
     }
 
@@ -56,16 +58,11 @@ const Home = () => {
                 onClick={(plateNumber) => {
                     queryData(plateNumber)
                 }}
+                isGettingFeedback={isGettingFeedback}
+                showFeedback={showFeedback}
+                feedbackList={feedback}
                 {...homeObjOne} 
             />
-            {
-                showFeedback && (
-                    <FeedbackView
-                        feedbackList={feedback}
-                    />
-                )
-            }
-            
             <InfoSection {...homeObjThree} />
             <InfoSection {...homeObjTwo} />
             <Pricing />

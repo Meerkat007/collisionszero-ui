@@ -3,6 +3,7 @@ import {InfoSec, InfoRow, InfoColumn, TextWrapper, TopLine, Heading, Subtitle, I
 import { Container, Button } from '../../globalStyles'
 import { Link } from 'react-router-dom'
 import {Form, FormInput} from '../Footer/Footer.elements'
+import {FeedbackView} from '..'
 
  const InfoSectionWithInput = ({ 
     
@@ -19,45 +20,56 @@ import {Form, FormInput} from '../Footer/Footer.elements'
     alt,
     imgStart,
     start,
-    onClick
+    onClick,
+    feedbackList,
+    showFeedback,
+    isGettingFeedback,
 }) => {
     const [plateNum, setPlateNum] = React.useState('');
     console.log(plateNum)
     return (
         <>
             <InfoSec lightBg={lightBg}>
-                <Container>
-                    <InfoRow imgStart={imgStart}>
-                        <InfoColumn>
-                            <TextWrapper>
-                            <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-                            <Heading lightText={lightText}>{headline}</Heading>
-                            <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                            <Form>
-                                <FormInput
-                                    name='plateNumber' 
-                                    type='text' 
-                                    placeholder='Enter plate number' 
-                                    onChange={(event) => {
-                                        setPlateNum(event.target.value)
-                                    }}
-                                />
-                                <Button 
-                                    type='button'
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        onClick(plateNum)}
-                                    }
-                                >Search</Button>
-                            </Form>
-                            </TextWrapper>
-                        </InfoColumn>
-                        <InfoColumn>
-                        <ImgWrapper start={start}>
-                            <Img src={img} alt={alt} />
-                        </ImgWrapper>
-                        </InfoColumn>
-                    </InfoRow>
+                <Container style={{textAlign: 'center'}}>
+                    <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
+                    <Heading lightText={lightText}>{headline}</Heading>
+                    <Subtitle
+                        style={{
+                            margin: '0 auto 20px',
+                            maxWidth: '480px'
+                        }}
+                        lightTextDesc={lightTextDesc}
+                    >{description}</Subtitle>
+                    <Form style={{width: '100%'}}>
+                        <FormInput
+                            name='plateNumber' 
+                            type='text' 
+                            placeholder='' 
+                            onChange={(event) => {
+                                setPlateNum(event.target.value)
+                            }}
+                        />
+                        <Button 
+                            type='button'
+                            onClick={(event) => {
+                                event.preventDefault();
+                                onClick(plateNum)}
+                            }
+                            disabled={isGettingFeedback}
+                        >
+                            {isGettingFeedback 
+                                ? 'Checking...' 
+                                : 'Check Feedback'
+                            }
+                        </Button>
+                    </Form>
+                    {
+                        showFeedback && (
+                            <FeedbackView 
+                                feedbackList={feedbackList}
+                            />
+                        )
+                    }
                 </Container>
             </InfoSec>
         </>
