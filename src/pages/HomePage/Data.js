@@ -4,10 +4,10 @@ export const homeObjOne = {
     lightTopLine: true,
     lightText: true,
     lightTextDesc: true,
-    topLine: 'Marketing Agency',
-    headline: 'Lead Generation Specialist for Online Businesses',
+    topLine: '',
+    headline: '',
     description:
-      'Enter your plate number or bumper ID below.',
+      'Enter plate number or bumper ID below',
     buttonLabel: 'Get Started',
     imgStart: '',
     img: require('../../images/svg-1.svg'),
