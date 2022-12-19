@@ -82,7 +82,7 @@ function Footer() {
       <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to='/'>
-            <SocialIcon />
+            {/* <SocialIcon /> */}
             CollisionsZero
           </SocialLogo>
           <WebsiteRights>CollisionsZero © {date.getFullYear()} </WebsiteRights>
