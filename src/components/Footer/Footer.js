@@ -34,7 +34,7 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <FooterSubscription>
+      {/* <FooterSubscription>
         <FooterSubHeading>
           Join our exclusive membership to receive the latest news and trends
         </FooterSubHeading>
@@ -43,8 +43,8 @@ function Footer() {
           <FormInput name='email' type='email' placeholder='Your Email' />
           <Button fontBig>Subscribe</Button>
         </Form>
-      </FooterSubscription>
-      <FooterLinksContainer>
+      </FooterSubscription> */}
+      {/* <FooterLinksContainer>
         <FooterLinksWrapper>
           <FooterLinkItems>
             <FooterLinkTitle>About Us</FooterLinkTitle>
@@ -78,14 +78,14 @@ function Footer() {
             <FooterLink to='/'>Twitter</FooterLink>
           </FooterLinkItems>
         </FooterLinksWrapper>
-      </FooterLinksContainer>
+      </FooterLinksContainer> */}
       <SocialMedia>
         <SocialMediaWrap>
           <SocialLogo to='/'>
             <SocialIcon />
-            ULTRA
+            CollisionsZero
           </SocialLogo>
-          <WebsiteRights>ULTRA © {date.getFullYear()} </WebsiteRights>
+          <WebsiteRights>CollisionsZero © {date.getFullYear()} </WebsiteRights>
           <SocialIcons>
             <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
               <FaFacebook />

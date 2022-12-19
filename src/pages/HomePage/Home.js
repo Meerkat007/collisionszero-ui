@@ -63,10 +63,10 @@ const Home = () => {
                 feedbackList={feedback}
                 {...homeObjOne} 
             />
-            <InfoSection {...homeObjThree} />
-            <InfoSection {...homeObjTwo} />
-            <Pricing />
-            <InfoSection {...homeObjFour} />
+            {/* <InfoSection {...homeObjThree} /> */}
+            {/* <InfoSection {...homeObjTwo} /> */}
+            {/* <Pricing /> */}
+            {/* <InfoSection {...homeObjFour} /> */}
         </>
     )
 }

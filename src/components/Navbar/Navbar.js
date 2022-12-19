@@ -65,8 +65,8 @@ function Navbar() {
             <Nav>
                 <NavbarContainer>
                     <NavLogo to='/'> 
-                        <NavIcon />
-                            ULTRA
+                        {/* <NavIcon /> */}
+                        CollisionsZero
                     </NavLogo>
                     <HamburgerIcon onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}
@@ -79,7 +79,7 @@ function Navbar() {
                         </NavItem>
                     
                     
-                        <NavItem onClick={handleServicesClick} servicesClick={servicesClick}>
+                        {/* <NavItem onClick={handleServicesClick} servicesClick={servicesClick}>
                             <NavLinks to='/services' onClick={closeMobileMenu}>
                                 Services
                             </NavLinks>
@@ -103,7 +103,7 @@ function Navbar() {
                                 </NavBtnLink>
                             )}
                             
-                        </NavItemBtn>
+                        </NavItemBtn> */}
                     </NavMenu>
                 </NavbarContainer>
             </Nav>

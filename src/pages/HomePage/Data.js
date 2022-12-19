@@ -7,7 +7,7 @@ export const homeObjOne = {
     topLine: 'Marketing Agency',
     headline: 'Lead Generation Specialist for Online Businesses',
     description:
-      'Enter your plate number or bumper ID below',
+      'Enter your plate number or bumper ID below. Feedback from the past 3 months is returned.',
     buttonLabel: 'Get Started',
     imgStart: '',
     img: require('../../images/svg-1.svg'),
