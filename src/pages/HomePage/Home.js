@@ -37,6 +37,8 @@ const Home = () => {
           }
 
         setIsGettingFeedback(true)
+        setShowFeedback(false)
+        setFeedback([])
         axios.get(url, config)
             .then(function (response) {
                 // handle success
