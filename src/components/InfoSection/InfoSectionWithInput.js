@@ -44,7 +44,7 @@ import {FeedbackView} from '..'
                         <FormInput
                             name='plateNumber' 
                             type='text' 
-                            placeholder='Plate #' 
+                            placeholder='Plate number' 
                             onChange={(event) => {
                                 setPlateNum(event.target.value)
                             }}
