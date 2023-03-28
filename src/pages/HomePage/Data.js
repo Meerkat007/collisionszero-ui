@@ -7,7 +7,7 @@ export const homeObjOne = {
     topLine: '',
     headline: '',
     description:
-      'Enter plate number or bumper ID below',
+      'Enter plate number below',
     buttonLabel: 'Get Started',
     imgStart: '',
     img: require('../../images/svg-1.svg'),
