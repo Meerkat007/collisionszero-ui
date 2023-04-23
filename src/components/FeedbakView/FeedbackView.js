@@ -1,6 +1,4 @@
 import React from 'react';
-import {InfoSec, InfoRow, InfoColumn, TextWrapper, TopLine, Heading, Subtitle, ImgWrapper, Img} from '../InfoSection/InfoSection.elements'
-import { Container, Button } from '../../globalStyles'
 import './FeedbackView.css'
 import moment from 'moment-timezone'
 
