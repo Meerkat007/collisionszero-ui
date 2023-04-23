@@ -44,6 +44,15 @@ function TableView({feedbackList}) {
     )
 }
 
+function getDataForCharts(feedbackList) {
+    if (!Array.isArray(feedbackList)) {
+        return data;
+    }
+    return feedbackList.map(feedbackItem => {
+        name: 
+    })
+}
+
 export default function FeedbackView({
     feedbackList,
     primary,
